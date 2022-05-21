@@ -28,6 +28,7 @@ class MoviesView(Resource):
 
 
 @movie_ns.route('/<int:mid>')
+@movie_ns.doc(params={'mid': 'movie id'})
 class MovieView(Resource):
     def get(self, mid):
         movie = movie_service.get_one(mid)

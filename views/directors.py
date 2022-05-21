@@ -23,6 +23,7 @@ class DirectorsView(Resource):
 
 
 @director_ns.route('/<int:did>')
+@director_ns.doc(params={'did': 'director id'})
 class DirectorView(Resource):
     def get(self, did):
         director = director_service.get_one(did)
